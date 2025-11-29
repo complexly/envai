@@ -1,11 +1,12 @@
+/* 基础样式保持不变，新增/修改 Tab 相关样式 */
 :root {
     --bg-color: #F9FAFB;
     --card-bg: #FFFFFF;
     --text-primary: #333333;
     --text-secondary: #555555;
-    --primary-green: #2E8B57; /* SeaGreen */
-    --secondary-blue: #4682B4; /* SteelBlue */
-    --accent-color: #20B2AA; /* LightSeaGreen */
+    --primary-green: #2E8B57;
+    --secondary-blue: #4682B4;
+    --accent-color: #20B2AA;
     --highlight-bg: #E8F5E9;
     --border-color: #E5E7EB;
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -23,7 +24,7 @@ body {
     font-family: var(--font-sans);
     background-color: var(--bg-color);
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.8; /* 增加行高以适应大量文字 */
     -webkit-font-smoothing: antialiased;
 }
 
@@ -89,12 +90,14 @@ a:hover {
     max-width: 1400px;
     margin: 0 auto;
     min-height: 100vh;
+    background-color: #fff; /* 容器背景设为白色 */
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
 }
 
-/* 侧边栏导航 */
+/* 侧边栏导航 - 修改为 Tab 控制器 */
 .sidebar {
-    width: 280px;
-    background-color: var(--card-bg);
+    width: 300px; /* 稍微加宽 */
+    background-color: #f8f9fa;
     border-right: 1px solid var(--border-color);
     height: 100vh;
     position: sticky;
@@ -105,14 +108,16 @@ a:hover {
 }
 
 .nav-header {
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 800;
     color: var(--primary-green);
     margin-bottom: 2rem;
     padding-left: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    border-bottom: 2px solid var(--primary-green);
+    padding-bottom: 1rem;
 }
 
 .nav-list {
@@ -120,68 +125,152 @@ a:hover {
 }
 
 .nav-item {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
-.nav-link {
+/* Tab 按钮样式 */
+.nav-btn {
     display: block;
-    padding: 0.75rem 1rem;
+    width: 100%;
+    text-align: left;
+    padding: 1rem 1.25rem;
     border-radius: 8px;
     color: var(--text-secondary);
     font-size: 0.95rem;
+    background: none;
+    border: none;
+    cursor: pointer;
     transition: all 0.2s;
+    font-family: inherit;
+    line-height: 1.4;
 }
 
-.nav-link:hover {
-    background-color: #f3f4f6;
+.nav-btn:hover {
+    background-color: #e9ecef;
     color: var(--primary-green);
 }
 
-.nav-link.active {
-    background-color: var(--highlight-bg);
-    color: var(--primary-green);
+.nav-btn.active {
+    background-color: var(--primary-green);
+    color: white;
     font-weight: 600;
-    border-left: 3px solid var(--primary-green);
+    box-shadow: var(--shadow-sm);
 }
 
 /* 主内容区 */
 .main-content {
     flex: 1;
-    padding: 3rem 4rem;
-    max-width: 1000px; /* 限制阅读宽度 */
+    padding: 4rem 5rem;
+    max-width: 1100px; /* 限制内容宽度以提高可读性 */
+    overflow-y: auto; /* 允许主内容独立滚动 (如果不希望整个页面滚动) */
 }
 
-section {
-    margin-bottom: 5rem;
-    scroll-margin-top: 2rem;
+/* Tab 内容区域 */
+.tab-content {
+    display: none; /* 默认隐藏 */
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block; /* 激活显示 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
 }
 
 .section-title {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     color: var(--text-primary);
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--primary-green);
-    padding-bottom: 0.5rem;
-    display: inline-block;
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .section-intro {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    font-style: italic;
 }
 
-/* 卡片与图表样式 */
+/* 正文排版 */
+.content-body h3 {
+    font-size: 1.6rem;
+    color: var(--primary-green);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--secondary-blue);
+    padding-left: 1rem;
+}
+
+.content-body h4 {
+    font-size: 1.3rem;
+    color: #444;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.content-body p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+.content-body ul {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.content-body li {
+    margin-bottom: 0.5rem;
+}
+
+/* 引用文献样式 */
+.references {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px dashed var(--border-color);
+    font-size: 0.9rem;
+    color: #666;
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.references h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+    border-left: none;
+    padding-left: 0;
+}
+
+.references ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.references li {
+    margin-bottom: 0.5rem;
+}
+
+/* 卡片与图表样式 (保留并优化) */
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+    gap: 2rem;
+    margin: 2.5rem 0;
 }
 
 .info-card {
     background: var(--card-bg);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
@@ -195,55 +284,57 @@ section {
 }
 
 .card-icon {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--secondary-blue);
 }
 
 .card-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
     color: var(--text-primary);
 }
 
 .card-text {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--text-secondary);
+    line-height: 1.6;
 }
 
 /* 流程图/对比图样式 */
 .diagram-box {
     background: white;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 12px;
     border: 1px dashed var(--secondary-blue);
-    margin: 2rem 0;
+    margin: 3rem 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .diagram-node {
     background: var(--highlight-bg);
-    padding: 1rem 1.5rem;
+    padding: 1.2rem 2rem;
     border-radius: 8px;
-    border: 1px solid var(--primary-green);
-    font-weight: 600;
+    border: 2px solid var(--primary-green);
+    font-weight: 700;
     color: var(--primary-green);
     text-align: center;
-    position: relative;
+    box-shadow: var(--shadow-sm);
 }
 
 .diagram-arrow {
     color: var(--text-secondary);
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 /* 响应式调整 */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .container {
         flex-direction: column;
     }
@@ -254,8 +345,31 @@ section {
         position: relative;
         padding: 1rem;
         border-bottom: 1px solid var(--border-color);
+        white-space: nowrap;
+        overflow-x: auto;
+        display: flex;
+        flex-direction: row; /* 移动端横向滚动 */
+        align-items: center;
+    }
+
+    .nav-header {
+        margin-bottom: 0;
+        border-bottom: none;
+        margin-right: 1rem;
+        padding-bottom: 0;
     }
     
+    .nav-list {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .nav-btn {
+        width: auto;
+        white-space: nowrap;
+        padding: 0.5rem 1rem;
+    }
+
     .main-content {
         padding: 2rem 1.5rem;
     }
