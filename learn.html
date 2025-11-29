@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程内容 - 环境人工智能</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 侧边栏导航 -->
+        <nav class="sidebar">
+            <div class="nav-header">
+                <a href="index.html" style="color: inherit;">🌿 环境 AI</a>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#ch1" class="nav-link active">1. 范式转移</a></li>
+                <li class="nav-item"><a href="#ch2" class="nav-link">2. 核心技术</a></li>
+                <li class="nav-item"><a href="#ch3" class="nav-link">3. 行星级观测</a></li>
+                <li class="nav-item"><a href="#ch4" class="nav-link">4. 大气与气候</a></li>
+                <li class="nav-item"><a href="#ch5" class="nav-link">5. 智慧水务</a></li>
+                <li class="nav-item"><a href="#ch6" class="nav-link">6. 生物多样性</a></li>
+                <li class="nav-item"><a href="#ch7" class="nav-link">7. 智慧农业</a></li>
+                <li class="nav-item"><a href="#ch8" class="nav-link">8. 行为模拟</a></li>
+                <li class="nav-item"><a href="#ch9" class="nav-link">9. 可信 AI</a></li>
+                <li class="nav-item"><a href="#ch10" class="nav-link">10. 伦理与影响</a></li>
+                <li class="nav-item"><a href="#ch11" class="nav-link">11. 未来展望</a></li>
+            </ul>
+        </nav>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            
+            <!-- 第1章 -->
+            <section id="ch1">
+                <h2 class="section-title">1. 范式转移：数据驱动环境科学</h2>
+                <p class="section-intro">环境科学正在经历从“数据匮乏”到“数据密集”的根本性转变。AI 不再仅是工具，而是认识地球的新透镜。</p>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="card-icon">📉 传统范式</div>
+                        <h3 class="card-title">数据匮乏</h3>
+                        <p class="card-text">依赖人工采样，时空覆盖有限，基于小样本统计假设。</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon">📈 新范式</div>
+                        <h3 class="card-title">数据密集</h3>
+                        <p class="card-text">遥感、IoT、eDNA 带来数据爆炸，深度学习揭示隐藏模式。</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon">🤝 混合建模</div>
+                        <h3 class="card-title">物理+数据</h3>
+                        <p class="card-text">结合物理定律的严谨与深度学习的灵活性 (PIML)。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第2章 -->
+            <section id="ch2">
+                <h2 class="section-title">2. 核心技术基础</h2>
+                <p class="section-intro">理解支撑环境 AI 的三大支柱：监督学习、无监督学习与强化学习。</p>
+                
+                <div class="diagram-box">
+                    <div class="diagram-node">监督学习<br><span style="font-size:0.8em; color:#666">预测污染物/分类地表</span></div>
+                    <div class="diagram-node">无监督学习<br><span style="font-size:0.8em; color:#666">发现生态模式/聚类</span></div>
+                    <div class="diagram-node">强化学习<br><span style="font-size:0.8em; color:#666">资源调度/策略优化</span></div>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3 class="card-title">CNN (卷积神经网络)</h3>
+                        <p class="card-text">环境视觉的核心。擅长处理遥感影像、物种照片，提取空间特征。</p>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-title">LSTM/RNN (循环神经网络)</h3>
+                        <p class="card-text">处理时间序列数据。用于气象预报、水文径流预测。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第3章 -->
+            <section id="ch3">
+                <h2 class="section-title">3. 行星级观测：遥感大数据</h2>
+                <p class="section-intro">借助 Google Earth Engine (GEE) 和云原生数据架构，我们得以实时监控地球表面。</p>
+                
+                <div class="info-grid">
+                    <div class="info-card" style="border-left: 4px solid var(--secondary-blue);">
+                        <h3 class="card-title">🛰️ 数据源</h3>
+                        <p class="card-text">
+                            <strong>光学卫星：</strong>Landsat, Sentinel-2 (地表覆盖)<br>
+                            <strong>雷达卫星：</strong>Sentinel-1 (穿透云层)<br>
+                            <strong>气象卫星：</strong>监测大气成分
+                        </p>
+                    </div>
+                    <div class="info-card" style="border-left: 4px solid var(--primary-green);">
+                        <h3 class="card-title">☁️ 云计算平台</h3>
+                        <p class="card-text">
+                            <strong>Google Earth Engine：</strong>PB级数据在线处理。<br>
+                            <strong>Cloud-Native：</strong>COG, Zarr, STAC 标准让数据访问无延迟。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第4章 -->
+            <section id="ch4">
+                <h2 class="section-title">4. 大气与气候革命</h2>
+                <p class="section-intro">AI 气象模型（如 GraphCast）在速度和精度上正在超越传统数值天气预报。</p>
+                
+                <div class="diagram-box">
+                    <div class="diagram-node" style="background:#f0f4ff">传统数值预报 (NWP)<br><span style="font-size:0.8em">求解方程, 耗时极长</span></div>
+                    <div class="diagram-arrow">vs</div>
+                    <div class="diagram-node" style="background:#e8f5e9">AI 气象模型 (GraphCast)<br><span style="font-size:0.8em">数据驱动, 快1000倍+</span></div>
+                </div>
+
+                <p><strong>关键应用：</strong></p>
+                <ul>
+                    <li><strong>极端天气预警：</strong>通过快速集合预报捕捉“黑天鹅”事件。</li>
+                    <li><strong>空气质量预测：</strong>利用图神经网络 (GNN) 捕捉污染物在城市间的时空扩散。</li>
+                    <li><strong>混合建模 (NeuralGCM)：</strong>结合物理核心与AI参数化，实现长期稳定的气候模拟。</li>
+                </ul>
+            </section>
+
+            <!-- 第5章 -->
+            <section id="ch5">
+                <h2 class="section-title">5. 智慧水务与资源管理</h2>
+                <p class="section-intro">深度强化学习 (DRL) 正在解决水库调度与水质监测中的复杂博弈问题。</p>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3 class="card-title">💧 水库智能调度</h3>
+                        <p class="card-text">DRL 智能体通过“试错”学习，平衡防洪、发电与生态需水，优于传统规则。</p>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-title">🔍 水质软测量</h3>
+                        <p class="card-text">利用 IoT 传感器（pH, 浊度）+ AI 模型，实时反演难以测量的生化指标（COD, 总氮）。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第6章 -->
+            <section id="ch6">
+                <h2 class="section-title">6. 生物多样性：视觉与听觉</h2>
+                <p class="section-intro">计算机视觉与生物声学技术，让我们能全天候、大范围地“感知”自然。</p>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="card-icon">📸</div>
+                        <h3 class="card-title">AI 相机陷阱</h3>
+                        <p class="card-text">自动过滤90%的空拍照片，精准识别珍稀物种，辅助反偷猎巡逻。</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon">🎤</div>
+                        <h3 class="card-title">生物声学监测</h3>
+                        <p class="card-text">通过“声景嵌入”分析生态系统健康，识别鸟鸣、鲸语乃至伐木声。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第7章 -->
+            <section id="ch7">
+                <h2 class="section-title">7. 智慧农业与土壤健康</h2>
+                <p class="section-intro">从微观的土壤孔隙到宏观的农田管理，AI 助力精准农业实现“减肥增效”。</p>
+                
+                <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+                    <li><strong>数字土壤制图：</strong>融合遥感与高光谱数据，反演土壤有机碳与质地。</li>
+                    <li><strong>作物推荐系统：</strong>基于 TabNet 等模型，根据地块实况精准推荐水肥方案，提高产量并减少面源污染。</li>
+                </ul>
+            </section>
+
+            <!-- 第8章 -->
+            <section id="ch8">
+                <h2 class="section-title">8. 行为模拟与政策仿真</h2>
+                <p class="section-intro">大语言模型 (LLM) 赋能的智能体，让社会-生态系统 (SES) 的模拟更加逼真。</p>
+                
+                <div class="diagram-box">
+                    <div class="diagram-node">传统代理 (ABM)<br><span style="font-size:0.8em">规则简单，行为僵化</span></div>
+                    <div class="diagram-arrow">➡️ 进化</div>
+                    <div class="diagram-node" style="background: #fff3e0; border-color: #ff9800; color: #e65100;">生成式智能体 (LLM)<br><span style="font-size:0.8em">具备记忆、反思与协商能力</span></div>
+                </div>
+                <p class="card-text"><strong>应用：</strong>在虚拟世界中预演碳税政策、水权交易对社会行为的影响，打造政策制定的“风洞”。</p>
+            </section>
+
+            <!-- 第9章 -->
+            <section id="ch9">
+                <h2 class="section-title">9. 可信 AI：解释与不确定性</h2>
+                <p class="section-intro">环境决策关乎安全，我们必须打开 AI 的“黑箱”。</p>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3 class="card-title">XAI (可解释 AI)</h3>
+                        <p class="card-text">利用 SHAP、LIME 等工具进行归因分析。告诉决策者“为什么”预测洪水，建立信任。</p>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-title">不确定性量化</h3>
+                        <p class="card-text">不仅给出预测值，还给出置信区间。知道模型何时“不知道”，避免盲目自信。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第10章 -->
+            <section id="ch10">
+                <h2 class="section-title">10. 伦理与环境影响</h2>
+                <p class="section-intro">AI 是双刃剑：既是减排工具，也是能耗巨兽。</p>
+                
+                <div class="info-grid">
+                    <div class="info-card" style="border-color: #ef5350;">
+                        <h3 class="card-title">Red AI (高能耗)</h3>
+                        <p class="card-text">大模型训练产生巨大碳足迹，数据中心水资源消耗惊人。</p>
+                    </div>
+                    <div class="info-card" style="border-color: var(--primary-green);">
+                        <h3 class="card-title">Green AI (可持续)</h3>
+                        <p class="card-text">碳感知计算、模型压缩、使用绿色能源。追求效率而非单纯的精度。</p>
+                    </div>
+                </div>
+                <p style="margin-top:1rem; font-size:0.9em;"><strong>算法正义：</strong>需警惕由于数据偏差导致的“算法环境种族主义”，确保弱势群体不被模型遗忘。</p>
+            </section>
+
+            <!-- 第11章 -->
+            <section id="ch11">
+                <h2 class="section-title">11. 未来展望</h2>
+                <p class="section-intro">迈向数字孪生地球 (Digital Twins) 与跨学科融合的新时代。</p>
+                
+                <div class="diagram-box">
+                    <div class="diagram-node">数字孪生地球<br><span style="font-size:0.8em">DestinE 计划</span></div>
+                    <div class="diagram-node">实时交互</div>
+                    <div class="diagram-node">假设分析 (What-if)</div>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3 class="card-title">大挑战</h3>
+                        <p class="card-text">全清洁能源电网优化、全球生物多样性实时监测网络。</p>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-title">人才培养</h3>
+                        <p class="card-text">培养兼通环境科学与数据科学的复合型人才，应对行星级挑战。</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
